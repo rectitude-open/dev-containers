@@ -62,6 +62,7 @@ WORKDIR /home/wwwroot
 
 COPY nginx-site.conf.template /etc/nginx/conf.d/default.conf.template
 COPY custom_php.ini /usr/local/etc/php/conf.d/custom_php.ini
+COPY docker-php-ext-xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY vite.conf.template /etc/supervisor/conf.d/vite.conf.template
 
