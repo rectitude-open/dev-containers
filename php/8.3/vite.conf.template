@@ -1,0 +1,10 @@
+[program:vite]
+command=npm run dev
+directory=${PROJECT_ROOT}
+autorestart=true
+stdout_logfile=/home/wwwlogs/vite-stdout.log
+stderr_logfile=/home/wwwlogs/vite-stderr.log
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+stdout_logfile_backups=5
+stderr_logfile_backups=5
