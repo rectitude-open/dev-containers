@@ -36,7 +36,8 @@ RUN apt-get clean && \
     supervisor \
     sqlite3  \
     nano \
-    cron
+    cron \
+    gettext-base
 
 COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
 
