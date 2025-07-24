@@ -53,7 +53,8 @@ RUN yes | docker-php-ext-install mysqli && \
     docker-php-ext-install pdo_mysql gd zip pcntl bcmath mbstring exif && \
     docker-php-ext-enable opcache && \
     docker-php-ext-configure intl && \
-    docker-php-ext-install intl
+    docker-php-ext-install intl && \
+    docker-php-ext-install sockets
 
 RUN yes | pecl install xdebug && \
     docker-php-ext-enable xdebug
