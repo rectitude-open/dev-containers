@@ -39,6 +39,9 @@ RUN apt-get clean && \
     cron \
     gettext-base
 
+RUN usermod -s /bin/bash www-data
+RUN echo "alias ss='su www-data'" >> /root/.bashrc
+
 COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
 
 RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION} | bash -
