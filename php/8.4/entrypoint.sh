@@ -11,6 +11,11 @@ if [ -n "$HOST_UID" ] && [ -n "$HOST_GID" ]; then
     fi
 fi
 
+if [ -n "$PROJECT_ROOT" ]; then
+    usermod -d "$PROJECT_ROOT" www-data
+    chown www-data:www-data "$PROJECT_ROOT"
+fi
+
 if [ -f /etc/nginx/custom.conf ]; then
     cp /etc/nginx/custom.conf /etc/nginx/conf.d/default.conf
 else
