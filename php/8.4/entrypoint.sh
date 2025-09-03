@@ -26,4 +26,8 @@ if [ "${VITE_ENABLED}" = "true" ]; then
     envsubst '$PROJECT_ROOT' < /etc/supervisor/conf.d/vite.conf.template >> /etc/supervisor/conf.d/supervisord.conf
 fi
 
+if [ -f /etc/supervisor/custom.conf ]; then
+    envsubst '$PROJECT_ROOT' < /etc/supervisor/custom.conf >> /etc/supervisor/conf.d/supervisord.conf
+fi
+
 exec "$@"
