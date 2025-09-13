@@ -5,7 +5,7 @@ server {
     root ${NGINX_ROOT};
     client_max_body_size 100m;
 
-    index index.php;
+    index index.php index.html;
     charset utf-8;
 
     error_log /home/wwwlogs/nginx-error-log.log;
