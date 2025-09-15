@@ -1,4 +1,4 @@
-FROM php:8.4-bullseye-fpm
+FROM php:8.4-fpm-bullseye
 
 ENV NODE_VERSION=22.x
 
