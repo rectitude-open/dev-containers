@@ -1,4 +1,4 @@
-FROM php:8.4-fpm-bullseye
+FROM php:8.4-bullseye-fpm
 
 ENV NODE_VERSION=22.x
 
@@ -45,7 +45,7 @@ RUN echo "alias ss='su www-data'" >> /root/.bashrc
 COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
 
 RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION} | bash -
-RUN apt-get install -y nodejs
+RUN apt-get install -y nodejs && npm install -g pnpm
 
 RUN apt-get install -y nginx && \
     rm /etc/nginx/sites-enabled/default && \
