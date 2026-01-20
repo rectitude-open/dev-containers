@@ -53,14 +53,15 @@ RUN apt-get install -y nginx && \
 
 RUN yes | docker-php-ext-install mysqli && \
     docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ --with-webp && \
-    docker-php-ext-install pdo_mysql gd zip pcntl bcmath mbstring exif && \
+    docker-php-ext-install pdo_mysql gd zip pcntl bcmath mbstring exif intl sockets && \
     docker-php-ext-enable opcache && \
-    docker-php-ext-configure intl && \
-    docker-php-ext-install intl && \
-    docker-php-ext-install sockets
+    docker-php-ext-configure intl
 
 RUN yes | pecl install xdebug && \
     docker-php-ext-enable xdebug
+
+RUN yes | pecl install redis && \
+    docker-php-ext-enable redis
 
 WORKDIR /home/wwwroot
 
