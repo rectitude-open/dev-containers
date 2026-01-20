@@ -60,7 +60,7 @@ RUN yes | docker-php-ext-install mysqli && \
 RUN yes | pecl install xdebug && \
     docker-php-ext-enable xdebug
 
-RUN yes | pecl install redis && \
+RUN echo "no\nno\nno\nno\nno\nno" | pecl install redis && \
     docker-php-ext-enable redis
 
 WORKDIR /home/wwwroot
